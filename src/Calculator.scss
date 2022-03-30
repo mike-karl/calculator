@@ -1,0 +1,172 @@
+@font-face{
+    font-family:'digital-calculator-font';
+    src: url('./digital-7.ttf');
+   }
+
+body {
+    background-color: #fff;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.Calculator {
+    background-color: rgb(71, 124, 240);
+    width: 500px;
+    min-height: 750px;
+    border-radius: 10px;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas: " display display display display "
+                         " rowOp rowOp rowOp rowOp "
+                         " Num Num Num colOp "
+                         " Num Num Num colOp "
+                         " Num Num Num colOp "
+                         " Num Num Num colOp ";
+    padding: 30px;
+    
+}
+
+.Display {
+    background-color: rgb(150, 177, 159);
+    border: 5px solid rgb(5, 2, 46);
+    font-family: 'digital-calculator-font';
+    font-size: 64px;
+    min-height: 10rem;
+    max-height: 15rem;
+    grid-area: display;
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#input {
+    word-wrap: break-word;
+    overflow: hidden;
+    max-width: 100%;
+    height: fit-content;
+    margin-top: -50px;
+}
+@keyframes blinking {
+    0% {
+      background-color: rgb(150, 177, 159);
+
+    }
+    50% {
+      background-color: black;
+
+    }
+    100% {
+        background-color: rgb(150, 177, 159);
+    }
+  }
+  #caretBlock {
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: -1px;
+    margin-left: 5px;
+    width: 26px;
+    height: 43px;
+    animation: blinking 1s infinite;
+  }
+
+  #display {
+      word-wrap: break-word;
+      align-self: start;
+      justify-self: end;
+      overflow: hidden;
+      max-width: 100%;
+      max-height: fit-content;
+      margin-top: 0px;
+  }
+  
+.btn {
+    display: grid;
+    background-color: #fff;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 2px 2px#333;
+    justify-items: center;
+    align-items: center;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn:hover {
+    border:1px solid greenyellow;
+    cursor: pointer;
+}
+
+.btn:active {
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+}
+
+.RowOps {
+    width: 100%;
+    display: grid;
+    grid-gap: 5px;
+    grid-area: rowOp;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.ColOps {
+    display: grid;
+    grid-gap: 5px;
+    grid-area: colOp;
+    width: 100%;
+    height: 100%;
+
+}
+
+.OpBtn {
+    width: 100%;
+    background-color: rgb(202, 202, 202);;
+}
+.col {
+    width: 100%;
+    height: 100%;
+}
+
+.row {
+    width: 100%;
+    height: 100%;
+}
+
+#clear {
+    background-color: rgba(255, 0, 0, 0.767);
+}
+
+#equals {
+    background-color: rgb(0, 225, 255);
+}
+.NumPad {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-gap: 5px;
+    grid-area: Num;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    
+}
+
+.NumBtn {
+    background-color: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+#zero {
+    grid-column: span 2;
+}
